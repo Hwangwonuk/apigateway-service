@@ -38,6 +38,12 @@ spring:
           predicates:
             - Path=/second-service/**
           filters:
-            - CustomFilter
+#           여러가지 필터를 적용함에 있어서 추가적인 옵션을 사용하기 위해서는 name 옵션을 사용하여야 한다.
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Hi, there.
+                preLogger: true
+                postLogger: true
 #            - AddRequestHeader=second-request, second-request-header2
 #            - AddRequestHeader=second-response, second-response-header2
