@@ -25,10 +25,10 @@ import org.springframework.context.annotation.Configuration;
  * @see
  * @since (ex : 5 + 5)
  */
-@Configuration
+//@Configuration
 public class FilterConfig {
 
-  @Bean
+//  @Bean
   public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
     return builder.routes()
         .route(
