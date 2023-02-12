@@ -26,6 +26,10 @@ spring:
       # filters : 필터값 추가
       # lb : discovery service의 name 을 조회
       routes:
+        - id: catalog-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/catalog-service/**
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
