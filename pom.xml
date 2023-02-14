@@ -38,6 +38,24 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
+
+    <!--
+    로그인 API에서 JWT를 이용해서 회원 인증을 구현하는 중에 다음과 같은 에러
+    java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter\n\tat 에러 해결
+    JDK11 이 되면서 java EE, CORBA Module이 제거되었다.
+    -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+
   </dependencies>
   <dependencyManagement>
     <dependencies>

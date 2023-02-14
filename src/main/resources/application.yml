@@ -58,6 +58,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter # JWT 인증 인가 필터
 #        - id: user-service
 #          uri: lb://USER-SERVICE
 #          predicates:
@@ -84,3 +85,6 @@ spring:
                 postLogger: true
 #            - AddRequestHeader=second-request, second-request-header2
 #            - AddRequestHeader=second-response, second-response-header2
+
+token:
+  secret: user_token
